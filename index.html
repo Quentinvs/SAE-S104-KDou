@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE S1.04 - Groupe 112 - Accueil</title>
+
+    <!-- CSS INTÉGRÉ DIRECTEMENT -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: var(--primary-color);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .nav-menu a.active {
+            background-color: var(--secondary-color);
+        }
+
+        /* CONTENU PRINCIPAL */
+
+        .container {
+            max-width: 1200px;
+            margin: 5rem auto 2rem;
+            padding: 2rem;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* ÉQUIPE */
+
+        .team-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .member-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .team-member h4 {
+            color: var(--primary-color);
+            margin: 0.5rem 0;
+        }
+
+        .team-member p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* NAVIGATION RAPIDE */
+
+        .nav-cards {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-card {
+            flex: 1;
+            min-width: 200px;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .nav-card h4 {
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .nav-card p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .missions-list li {
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
+                display: block;
+                width: 100%;
+            }
+
+            .container {
+                margin-top: 12rem;
+                padding: 1rem;
+            }
+
+            .team-grid,
+            .nav-cards {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                margin-top: 14rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-menu centered-menu">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="mission1.html">Mission 1</a></li>
+            <li><a href="mission2.html">Mission 2</a></li>
+            <li><a href="mission3.html">Mission 3</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="creation-site.html">Création du site</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h1>SAE S1.04 - Groupe 112</h1>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Création d'une Base de Données</h2>
+        <p class="subtitle">Analyse et exploitation de la base KDou</p>
+    </section>
+
+    <section class="team">
+        <h3>Notre Équipe</h3>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-icon">AM</div>
+                <h4>Adam MEJAI</h4>
+                <p>Analyse des produits et optimisation du catalogue</p>
+            </div>
+            <div class="team-member">
+                <div class="member-icon">RB</div>
+                <h4>Rafael BARGUIRDJIAN</h4>
+                <p>Analyse santé et nutrition</p>
+            </div>
+            <div class="team-member">
+                <div class="member-icon">QR</div>
+                <h4>Quentin RODIER</h4>
+                <p>Étude de la provenance des produits</p>
+            </div>
+            <div class="team-member">
+                <div class="member-icon">DM</div>
+                <h4>Dylan MOUNIAYE</h4>
+                <p>Analyse du partenariat client</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <h3>Introduction</h3>
+        <h4>Contexte de l'entreprise KDou</h4>
+        <p>
+            KDou est une entreprise commerciale qui propose à ses clients des produits alimentaires
+            d'épicerie fine ou typiques achetés à des fournisseurs situés dans le monde entier.
+            Tous les clients de l'entreprise se situent actuellement en France. L'entreprise
+            considère générer un assez bon chiffre d'affaires et se pose la question de son
+            développement futur.
+        </p>
+
+        <h4>Objectifs de la SAE</h4>
+        <p>Dans le cadre de cette SAE, nous avons été amenés à :</p>
+        <ul>
+            <li>Analyser et comprendre la structure de la base de données KDou</li>
+            <li>Identifier les clés primaires, clés candidates et clés étrangères</li>
+            <li>Détecter les anomalies et proposer des améliorations</li>
+            <li>Créer des requêtes SQL pour extraire des indicateurs pertinents</li>
+            <li>Exploiter la base de données pour aider à la prise de décision stratégique</li>
+        </ul>
+
+        <h4>Méthodologie adoptée</h4>
+        <p>Notre travail s'est organisé en trois missions complémentaires :</p>
+        <ul class="missions-list">
+            <li><strong>Mission 1</strong> : Étude structurelle des données et navigation dans Excel</li>
+            <li><strong>Mission 2</strong> : Exploitation de la base via une interface low code (Access)</li>
+            <li><strong>Mission 3</strong> : Analyse avancée avec SQL pour produire des indicateurs calculés</li>
+        </ul>
+    </section>
+
+    <section class="quick-nav">
+        <h3>Navigation Rapide</h3>
+        <div class="nav-cards">
+            <a href="mission1.html" class="nav-card">
+                <h4>Mission 1</h4>
+                <p>Étude des données</p>
+            </a>
+            <a href="mission2.html" class="nav-card">
+                <h4>Mission 2</h4>
+                <p>Interface low code</p>
+            </a>
+            <a href="mission3.html" class="nav-card">
+                <h4>Mission 3</h4>
+                <p>Analyse SQL</p>
+            </a>
+            <a href="conclusion.html" class="nav-card">
+                <h4>Conclusion</h4>
+                <p>Synthèse et perspectives</p>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - SAE S1.04 - Groupe 112</p>
+        <p>BUT Informatique - IUT de Paris Rives de Seine</p>
+    </div>
+</footer>
+</body>
+</html>

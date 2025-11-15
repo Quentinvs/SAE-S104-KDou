@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE S1.04 - Création du site</title>
+    <style>
+        /* même base CSS que conclusion */
+        :root { --primary-color:#2563eb; --secondary-color:#1e40af; --accent-color:#3b82f6;
+            --text-dark:#1f2937; --text-light:#6b7280; --bg-light:#f3f4f6; --bg-white:#ffffff; --border-color:#e5e7eb;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--text-dark);background:var(--bg-light);}
+        .navbar{background:var(--primary-color);color:#fff;position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+        .centered-menu{display:flex;justify-content:center;align-items:center;gap:1rem;padding:1rem 0;list-style:none;}
+        .centered-menu a{color:#fff;text-decoration:none;padding:.5rem 1rem;border-radius:4px;transition:.3s;font-size:1.05rem;}
+        .centered-menu a:hover{background:var(--secondary-color);}
+        .centered-menu a.active{background:var(--secondary-color);}
+        .page-title{text-align:center;padding:1rem 0 1.5rem;background:var(--bg-light);margin-top:3.5rem;}
+        .page-title h1{font-size:1.8rem;color:var(--primary-color);font-weight:700;}
+        .container{max-width:1200px;margin:1rem auto 2rem;padding:2rem;background:var(--bg-white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+        section{margin-bottom:3rem;}
+        section h3{color:var(--primary-color);font-size:1.8rem;margin-bottom:1.5rem;border-bottom:2px solid var(--primary-color);padding-bottom:.5rem;}
+        .card{background:#fff;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 4px rgba(0,0,0,.1);border-left:4px solid var(--primary-color);}
+        .card h4{margin-top:0;color:var(--primary-color);}
+        .code-block{background:#111827;color:#e5e7eb;padding:1.2rem 1.4rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.9rem;overflow-x:auto;margin:1rem 0;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+        th{background:var(--primary-color);color:#fff;padding:1rem;text-align:left;}
+        td{padding:.75rem 1rem;border-bottom:1px solid var(--border-color);}
+        ul{margin-left:2rem;margin-bottom:1rem;} li{margin-bottom:.5rem;}
+        .team-grid{display:flex;flex-wrap:wrap;gap:1.5rem;}
+        .team-member{flex:1;min-width:220px;padding:1.5rem;background:var(--bg-light);border-radius:8px;text-align:center;}
+        footer{background:var(--text-dark);color:#fff;text-align:center;padding:2rem;margin-top:3rem;}
+        @media(max-width:768px){.container{margin:.5rem;margin-top:1rem;padding:1rem;}.page-title{margin-top:4.5rem;}.team-grid{flex-direction:column;}}
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-menu centered-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="mission1.html">Mission 1</a></li>
+            <li><a href="mission2.html">Mission 2</a></li>
+            <li><a href="mission3.html">Mission 3</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="creation-site.html" class="active">Création du site</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h1>SAE S1.04 - Groupe 112</h1>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Création du Site Web</h2>
+        <p class="subtitle">R1.02 – Développement d'Interface Web</p>
+    </section>
+
+    <section>
+        <h3>Présentation du projet</h3>
+        <p>
+            Ce site web a été développé dans le cadre de la ressource R1.02, en complément du rapport de la SAE S1.04.
+            Il rassemble et met en forme les résultats obtenus lors des trois missions sur la base KDou.
+        </p>
+    </section>
+
+    <section>
+        <h3>Architecture du site</h3>
+
+        <div class="card">
+            <h4>Structure des fichiers</h4>
+            <div class="code-block">
+                site-web/
+                │
+                ├── index.html          (Accueil)
+                ├── mission1.html       (Mission 1)
+                ├── mission2.html       (Mission 2)
+                ├── mission3.html       (Mission 3)
+                ├── conclusion.html     (Conclusion)
+                ├── creation-site.html  (Cette page)
+            </div>
+        </div>
+
+        <p>Choix principaux :</p>
+        <ul>
+            <li>Un fichier HTML par grande partie de la SAE</li>
+            <li>Un en-tête et un pied de page identiques sur toutes les pages</li>
+            <li>Une navigation fixe centrée en haut de l'écran</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Technologies utilisées</h3>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>HTML5</h4>
+                <p>Utilisation des balises sémantiques (header, nav, main, section, footer).</p>
+            </div>
+            <div class="team-member">
+                <h4>CSS3</h4>
+                <p>Variables CSS, Flexbox, cartes, tableaux et blocs de code stylisés.</p>
+            </div>
+            <div class="team-member">
+                <h4>Responsive</h4>
+                <p>Adaptation du site sur ordinateur, tablette et smartphone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Charte graphique</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Élément</th>
+                <th>Couleur</th>
+                <th>Usage</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Couleur principale</td>
+                <td style="background:#2563eb;color:#fff;">#2563eb</td>
+                <td>Barre de navigation, titres</td>
+            </tr>
+            <tr>
+                <td>Couleur secondaire</td>
+                <td style="background:#1e40af;color:#fff;">#1e40af</td>
+                <td>Survols, éléments actifs</td>
+            </tr>
+            <tr>
+                <td>Fond clair</td>
+                <td style="background:#f3f4f6;">#f3f4f6</td>
+                <td>Arrière-plan général</td>
+            </tr>
+            <tr>
+                <td>Texte principal</td>
+                <td style="background:#1f2937;color:#fff;">#1f2937</td>
+                <td>Contenu textuel</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Difficultés rencontrées</h3>
+
+        <div class="card">
+            <h4>Organisation des pages</h4>
+            <p><strong>Problème :</strong> garder une navigation cohérente entre plusieurs fichiers HTML.</p>
+            <p><strong>Solution :</strong> factoriser le même en-tête sur toutes les pages.</p>
+        </div>
+
+        <div class="card">
+            <h4>Responsive</h4>
+            <p><strong>Problème :</strong> affichage des cartes et tableaux sur mobile.</p>
+            <p><strong>Solution :</strong> utiliser Flexbox et des media queries.</p>
+        </div>
+
+        <div class="card">
+            <h4>Lisibilité du code</h4>
+            <p><strong>Problème :</strong> garder un code HTML/CSS lisible malgré la quantité de contenu.</p>
+            <p><strong>Solution :</strong> commenter et structurer les sections par thèmes.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Bilan sur le développement web</h3>
+        <p>La réalisation de ce site nous a permis de :</p>
+        <ul>
+            <li>Mettre en pratique les bases du HTML5 et du CSS3</li>
+            <li>Comprendre la structure d'un site multi-pages</li>
+            <li>Appliquer une charte graphique cohérente</li>
+            <li>Prendre en compte l'expérience utilisateur (navigation, lisibilité, responsive)</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - SAE S1.04 - Groupe 112</p>
+        <p>BUT Informatique - IUT de Paris Rives de Seine</p>
+    </div>
+</footer>
+</body>
+</html>

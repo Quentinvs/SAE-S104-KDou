@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE S1.04 - Mission 1</title>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .centered-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            list-style: none;
+        }
+
+        .centered-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .centered-menu a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .centered-menu a.active {
+            background-color: var(--secondary-color);
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 1rem 0 1.5rem 0;
+            background-color: var(--bg-light);
+            margin-top: 3.5rem;
+        }
+
+        .page-title h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 1rem auto 2rem;
+            padding: 2rem;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .warning {
+            border-left-color: #f59e0b;
+            background-color: #fef3c7;
+        }
+
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0.5rem;
+                margin-top: 1rem;
+                padding: 1rem;
+            }
+
+            .page-title {
+                margin-top: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-menu centered-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="mission1.html" class="active">Mission 1</a></li>
+            <li><a href="mission2.html">Mission 2</a></li>
+            <li><a href="mission3.html">Mission 3</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="creation-site.html">Création du site</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h1>SAE S1.04 - Groupe 112</h1>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Mission 1 – Étude des données</h2>
+        <p class="subtitle">Analyse structurelle de la base KDou avec Excel</p>
+    </section>
+
+    <section>
+        <h3>Objectifs de la mission</h3>
+        <p>
+            L'objectif de cette mission était de prendre en main la base de données KDou
+            sous forme de fichiers Excel, de comprendre la structure des tables et
+            d'identifier les premières anomalies de données.
+        </p>
+        <ul>
+            <li>Comprendre le rôle de chaque table</li>
+            <li>Identifier les clés primaires, candidates et étrangères</li>
+            <li>Étudier les relations entre les tables</li>
+            <li>Repérer les incohérences et problèmes de saisie</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Analyse des principales tables</h3>
+
+        <div class="card">
+            <h4>Table Fournisseur</h4>
+            <ul>
+                <li><strong>Clé primaire :</strong> N° fournisseur</li>
+                <li><strong>Clés candidates :</strong> Nom, Contact</li>
+                <li><strong>Rôle :</strong> identifier les fournisseurs de KDou</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Table Produit</h4>
+            <ul>
+                <li><strong>Clé primaire :</strong> Réf produit</li>
+                <li><strong>Clés étrangères :</strong> N° fournisseur, Code catégorie</li>
+                <li><strong>Rôle :</strong> décrire le catalogue de produits</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Table Catégorie</h4>
+            <ul>
+                <li><strong>Clé primaire :</strong> Code catégorie</li>
+                <li><strong>Clé candidate :</strong> Nom catégorie</li>
+                <li><strong>Rôle :</strong> regrouper les produits et définir des coefficients de marge</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Table Clientèle</h4>
+            <ul>
+                <li><strong>Clé primaire :</strong> Code client</li>
+                <li><strong>Clés candidates :</strong> Société, Contact</li>
+                <li><strong>Rôle :</strong> gérer les clients exclusivement situés en France</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Table Commande</h4>
+            <ul>
+                <li><strong>Clé primaire :</strong> N° commande</li>
+                <li><strong>Clé étrangère :</strong> Code client</li>
+                <li><strong>Rôle :</strong> historiser les commandes passées par les clients</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Table DétailCommande</h4>
+            <ul>
+                <li><strong>Clé primaire composite :</strong> (N° commande, Réf produit)</li>
+                <li><strong>Rôle :</strong> détailler les lignes de chaque commande</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>Anomalies détectées</h3>
+
+        <div class="card warning">
+            <h4>Problèmes de saisie</h4>
+            <ul>
+                <li>Pays saisis de plusieurs façons : <em>USA / U.S.A</em>, <em>Royaume Uni / Royaume-Uni</em></li>
+                <li>Villes avec fautes d'orthographe : <em>Besançon / Besancon</em></li>
+                <li>Formats de téléphone non homogènes</li>
+                <li>Valeurs manquantes (prix, stock, dates...)</li>
+            </ul>
+        </div>
+
+        <div class="card warning">
+            <h4>Problèmes de conception</h4>
+            <ul>
+                <li>Colonne <strong>Pays</strong> inutile dans Clientèle (tous les clients sont en France)</li>
+                <li>Coefficients de marge avec trop de décimales</li>
+                <li>Absence de table normalisée pour les pays</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>Pistes d'amélioration</h3>
+        <ul>
+            <li>Nettoyer les valeurs (pays, villes, téléphones...)</li>
+            <li>Compléter ou supprimer les lignes avec données manquantes</li>
+            <li>Normaliser les pays dans une table dédiée</li>
+            <li>Arrondir les coefficients de marge à un format homogène</li>
+            <li>Mettre en place des règles de validation de saisie</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - SAE S1.04 - Groupe 112</p>
+        <p>BUT Informatique - IUT de Paris Rives de Seine</p>
+    </div>
+</footer>
+</body>
+</html>

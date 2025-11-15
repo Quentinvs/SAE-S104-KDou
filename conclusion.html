@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE S1.04 - Conclusion</title>
+    <style>
+        /* même base CSS que plus haut, raccourcie */
+        :root { --primary-color:#2563eb; --secondary-color:#1e40af; --accent-color:#3b82f6;
+            --text-dark:#1f2937; --text-light:#6b7280; --bg-light:#f3f4f6; --bg-white:#ffffff; --border-color:#e5e7eb;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--text-dark);background:var(--bg-light);}
+        .navbar{background:var(--primary-color);color:#fff;position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+        .centered-menu{display:flex;justify-content:center;align-items:center;gap:1rem;padding:1rem 0;list-style:none;}
+        .centered-menu a{color:#fff;text-decoration:none;padding:.5rem 1rem;border-radius:4px;transition:.3s;font-size:1.05rem;}
+        .centered-menu a:hover{background:var(--secondary-color);}
+        .centered-menu a.active{background:var(--secondary-color);}
+        .page-title{text-align:center;padding:1rem 0 1.5rem;background:var(--bg-light);margin-top:3.5rem;}
+        .page-title h1{font-size:1.8rem;color:var(--primary-color);font-weight:700;}
+        .container{max-width:1200px;margin:1rem auto 2rem;padding:2rem;background:var(--bg-white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+        section{margin-bottom:3rem;}
+        section h3{color:var(--primary-color);font-size:1.8rem;margin-bottom:1.5rem;border-bottom:2px solid var(--primary-color);padding-bottom:.5rem;}
+        .team-grid{display:flex;flex-wrap:wrap;gap:1.5rem;}
+        .team-member{flex:1;min-width:220px;padding:1.5rem;background:var(--bg-light);border-radius:8px;text-align:center;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+        th{background:var(--primary-color);color:#fff;padding:1rem;text-align:left;}
+        td{padding:.75rem 1rem;border-bottom:1px solid var(--border-color);}
+        .highlight{background:#dbeafe;padding:1rem;border-left:4px solid var(--primary-color);border-radius:4px;margin:1rem 0;}
+        ul{margin-left:2rem;margin-bottom:1rem;} li{margin-bottom:.5rem;}
+        footer{background:var(--text-dark);color:#fff;text-align:center;padding:2rem;margin-top:3rem;}
+        @media(max-width:768px){.container{margin:.5rem;margin-top:1rem;padding:1rem;}.page-title{margin-top:4.5rem;}.team-grid{flex-direction:column;}}
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-menu centered-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="mission1.html">Mission 1</a></li>
+            <li><a href="mission2.html">Mission 2</a></li>
+            <li><a href="mission3.html">Mission 3</a></li>
+            <li><a href="conclusion.html" class="active">Conclusion</a></li>
+            <li><a href="creation-site.html">Création du site</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h1>SAE S1.04 - Groupe 112</h1>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Conclusion générale</h2>
+        <p class="subtitle">Synthèse de la SAE S1.04 – KDou</p>
+    </section>
+
+    <section>
+        <h3>Bilan des outils</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Outil</th>
+                <th>Usage</th>
+                <th>Points forts</th>
+                <th>Limites</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Excel</td>
+                <td>Exploration brute des données</td>
+                <td>Simple, visuel, filtrage rapide</td>
+                <td>Pas de vrai modèle relationnel, limité pour les analyses complexes</td>
+            </tr>
+            <tr>
+                <td>Access</td>
+                <td>Interface low code (QBE)</td>
+                <td>Création de requêtes sans SQL, interface graphique</td>
+                <td>Dépendant de Windows, peu adapté à de très grandes bases</td>
+            </tr>
+            <tr>
+                <td>SQL</td>
+                <td>Analyse avancée, indicateurs</td>
+                <td>Très puissant, précis, automatisable</td>
+                <td>Nécessite une vraie maîtrise de la syntaxe</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Compétences acquises</h3>
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>Analyse de données</h4>
+                <p>Compréhension d'une base relationnelle, détection d'anomalies, structuration.</p>
+            </div>
+            <div class="team-member">
+                <h4>Manipulation</h4>
+                <p>Filtres Excel, requêtes Access, écriture de requêtes SQL multi-tables.</p>
+            </div>
+            <div class="team-member">
+                <h4>Logique</h4>
+                <p>Construction de jointures, sous-requêtes, indicateurs calculés.</p>
+            </div>
+            <div class="team-member">
+                <h4>Communication</h4>
+                <p>Rédaction de rapport, synthèse, présentation des résultats.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Perspectives pour KDou</h3>
+        <div class="highlight">
+            <p>
+                Les analyses réalisées donnent à KDou une vision plus claire de son activité :
+                produits performants, clients importants, zones géographiques à développer,
+                et pistes d'optimisation logistique.
+            </p>
+        </div>
+        <ul>
+            <li><strong>Automatisation :</strong> mettre à jour régulièrement les indicateurs SQL</li>
+            <li><strong>Visualisation :</strong> connecter la base à des outils de dataviz (tableaux de bord)</li>
+            <li><strong>Stratégie :</strong> ajuster l'offre produits, les marges et la logistique</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - SAE S1.04 - Groupe 112</p>
+        <p>BUT Informatique - IUT de Paris Rives de Seine</p>
+    </div>
+</footer>
+</body>
+</html>

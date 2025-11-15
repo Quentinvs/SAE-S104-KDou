@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE S1.04 - Mission 2</title>
+
+    <!-- même CSS que mission1 -->
+    <style>
+        :root { --primary-color:#2563eb; --secondary-color:#1e40af; --accent-color:#3b82f6;
+            --text-dark:#1f2937; --text-light:#6b7280; --bg-light:#f3f4f6; --bg-white:#ffffff; --border-color:#e5e7eb;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--text-dark);background:var(--bg-light);}
+        .navbar{background:var(--primary-color);color:#fff;position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+        .centered-menu{display:flex;justify-content:center;align-items:center;gap:1rem;padding:1rem 0;list-style:none;}
+        .centered-menu a{color:#fff;text-decoration:none;padding:.5rem 1rem;border-radius:4px;transition:.3s;font-size:1.05rem;}
+        .centered-menu a:hover{background:var(--secondary-color);}
+        .centered-menu a.active{background:var(--secondary-color);}
+        .page-title{text-align:center;padding:1rem 0 1.5rem;background:var(--bg-light);margin-top:3.5rem;}
+        .page-title h1{font-size:1.8rem;color:var(--primary-color);font-weight:700;}
+        .container{max-width:1200px;margin:1rem auto 2rem;padding:2rem;background:var(--bg-white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+        section{margin-bottom:3rem;}
+        section h3{color:var(--primary-color);font-size:1.8rem;margin-bottom:1.5rem;border-bottom:2px solid var(--primary-color);padding-bottom:.5rem;}
+        section h4{color:var(--text-dark);font-size:1.3rem;margin-top:1.5rem;margin-bottom:1rem;}
+        .hero{text-align:center;padding:2rem 0;background:linear-gradient(135deg,var(--primary-color),var(--accent-color));color:#fff;border-radius:8px;margin-bottom:3rem;}
+        .hero h2{font-size:2.2rem;margin-bottom:.5rem;}
+        .subtitle{font-size:1.1rem;opacity:.9;}
+        ul{margin-left:2rem;margin-bottom:1rem;}
+        li{margin-bottom:.5rem;}
+        .card{background:#fff;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 4px rgba(0,0,0,.1);border-left:4px solid var(--primary-color);}
+        .card h4{margin-top:0;color:var(--primary-color);}
+        .highlight{background:#dbeafe;padding:1rem;border-left:4px solid var(--primary-color);border-radius:4px;margin:1rem 0;}
+        .warning{background:#fef3c7;border-left-color:#f59e0b;}
+        footer{background:var(--text-dark);color:#fff;text-align:center;padding:2rem;margin-top:3rem;}
+        @media(max-width:768px){.container{margin:.5rem;margin-top:1rem;padding:1rem;}.page-title{margin-top:4.5rem;}}
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-menu centered-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="mission1.html">Mission 1</a></li>
+            <li><a href="mission2.html" class="active">Mission 2</a></li>
+            <li><a href="mission3.html">Mission 3</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="creation-site.html">Création du site</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h1>SAE S1.04 - Groupe 112</h1>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Mission 2 – Interface low code</h2>
+        <p class="subtitle">Exploitation de la base KDou avec Microsoft Access</p>
+    </section>
+
+    <section>
+        <h3>Objectifs de la mission</h3>
+        <p>
+            Dans cette mission, nous avons utilisé <strong>Microsoft Access</strong> comme outil
+            <em>low code</em> pour interroger la base KDou sans écrire directement du SQL.
+        </p>
+        <ul>
+            <li>Créer des requêtes simples et multi-tables avec QBE</li>
+            <li>Appliquer des tris, filtres et critères</li>
+            <li>Visualiser les jointures entre les tables</li>
+            <li>Analyser les résultats pour aider à la décision</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Requêtes réalisées</h3>
+
+        <div class="card">
+            <h4>Produits par fournisseur</h4>
+            <p><strong>But :</strong> savoir quels produits sont fournis par quels fournisseurs.</p>
+            <p><strong>Tables :</strong> Fournisseur, Produit</p>
+            <p><strong>Résultat :</strong> liste des produits avec le nom du fournisseur et la catégorie.</p>
+        </div>
+
+        <div class="card">
+            <h4>Commandes par client</h4>
+            <p><strong>But :</strong> analyser le comportement d'achat de chaque client.</p>
+            <p><strong>Tables :</strong> Clientèle, Commande</p>
+            <p><strong>Résultat :</strong> société, ville, n° commande, date de commande.</p>
+        </div>
+
+        <div class="card">
+            <h4>Produits jamais commandés</h4>
+            <p><strong>But :</strong> repérer les produits du catalogue qui ne génèrent pas de ventes.</p>
+            <p><strong>Tables :</strong> Produit, DétailCommande</p>
+            <p><strong>Résultat :</strong> référence produit, nom, fournisseur, catégorie.</p>
+        </div>
+
+        <div class="card">
+            <h4>Clients pour livraisons groupées</h4>
+            <p><strong>But :</strong> identifier des groupes de clients situés dans la même ville.</p>
+            <p><strong>Tables :</strong> Clientèle, Commande</p>
+            <p><strong>Résultat :</strong> paires de clients avec commandes proches dans le temps.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Analyse de l'outil Access</h3>
+
+        <div class="highlight">
+            <h4>Points forts</h4>
+            <ul>
+                <li>Interface graphique intuitive</li>
+                <li>Création de requêtes sans écrire de SQL</li>
+                <li>Visualisation des relations entre tables</li>
+                <li>Génération automatique du code SQL</li>
+            </ul>
+        </div>
+
+        <div class="highlight warning">
+            <h4>Limites</h4>
+            <ul>
+                <li>Dépendance au système Windows</li>
+                <li>Peu adapté aux très grosses bases de données</li>
+                <li>Requêtes avancées parfois difficiles à construire en mode graphique</li>
+                <li>SQL généré spécifique à Access</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>Apport pour KDou</h3>
+        <p>Grâce à cette mission, KDou peut :</p>
+        <ul>
+            <li>Analyser rapidement ses données sans experts SQL</li>
+            <li>Explorer son catalogue et ses clients de manière interactive</li>
+            <li>Préparer la transition vers des outils plus avancés (SQL pur, BI...)</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - SAE S1.04 - Groupe 112</p>
+        <p>BUT Informatique - IUT de Paris Rives de Seine</p>
+    </div>
+</footer>
+</body>
+</html>
